@@ -11,6 +11,7 @@ import requests
 import inflect
 
 def get_slots(intent_request):
+    print('AWS Code Pipeline Testing')
     return intent_request['currentIntent']['slots']
 
 def close(session_attributes, fulfillment_state, message):
