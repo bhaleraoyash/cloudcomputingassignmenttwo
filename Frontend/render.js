@@ -114,7 +114,7 @@ function getBase64(file) {
 }
 
 function uploadPhoto() {
-  console.log('AWS Code Pipeline Test');
+  console.log('AWS Code Pipeline Testing');
   var filePath = (document.getElementById('file_path').value).split("\\");
   console.log(filePath);
   var file = document.getElementById('file_path').files[0];
