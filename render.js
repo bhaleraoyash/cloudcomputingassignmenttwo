@@ -3,12 +3,10 @@ function searchPhoto() {
   console.log('apigClient: ', apigClient);
 
   var user_message = document.getElementById('note-textarea').value;
-
   var body = {};
   var params = { 'q': user_message };
 
-  if(params['q']=="")
-  {
+  if(params['q']==""){
     alert("No Search Query Found. Enter keyword to Search!");
   }
   console.log(params['q']);
@@ -39,21 +37,18 @@ function searchPhoto() {
       }
 
       else {
+        photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;margin-bottom:30px;">Here are your images: </h2>';
 
-      photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;margin-bottom:30px;">Here are your images: </h2>';
-
-      image_paths = res["data"];
-      console.log(image_paths);
+        image_paths = res["data"];
+        console.log(image_paths);
         console.log(photosDiv);
         for (n = 0; n < image_paths.length; n++) {
-            images_list = image_paths[n].split('/');
-            imageName = images_list[images_list.length - 1];
-            photosDiv.innerHTML += '<figure><img src="' + image_paths[n] + '" style="width:25%"><figcaption>' + imageName + '</figcaption></figure>';
-
-         } 
-        
+          images_list = image_paths[n].split('/');
+          imageName = images_list[images_list.length - 1];
+          photosDiv.innerHTML += '<figure><img src="' + image_paths[n] + '" style="width:25%"><figcaption>' + imageName + '</figcaption></figure>';
+        }
         console.log(photosDiv);
-    }
+      }
     })
     .catch(function (result) {});
 }
@@ -122,15 +117,16 @@ function uploadPhoto() {
   console.log(filePath);
   if ((filePath == "") || (!['png', 'jpg', 'jpeg'].includes(filePath.toString().split(".")[1]))) {
         alert("Please upload a valid .png/.jpg/.jpeg file!");
-    } else {
-      let config = {
-                headers:{'Content-Type': file.type,'x-amz-meta-customLabels': custom_labels.value}
-            };
+    }
+  else {
+    let config = {
+      headers:{'Content-Type': file.type,'x-amz-meta-customLabels': custom_labels.value}
+    };
 
-            url = 'https://8plos60pul.execute-api.us-east-1.amazonaws.com/v1/upload/cloudassignmenttwo/' + file.name
-            console.log(url)
-            axios.put(url,file,config).then(response=>{
-                alert("Upload successful!!");
-            })
-          }
+    url = 'https://8plos60pul.execute-api.us-east-1.amazonaws.com/v1/upload/cloudassignmenttwo/' + file.name
+    console.log(url)
+    axios.put(url,file,config).then(response=>{
+      alert("Upload successful!!");
+    })
+  }
 }
