@@ -5,7 +5,7 @@ function searchPhoto() {
   var params = { 'q': user_message };
 
   if(params['q']==""){
-    alert("No Search Query Found. Enter keyword to Search!");
+    alert("Enter a valid search label");
   }
 
   var additionalParams = {
