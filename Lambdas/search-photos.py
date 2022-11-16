@@ -98,6 +98,7 @@ def search_intent(labels):
              for val in r['hits']['hits']:
                 key = val['_source']['objectKey']
                 if key not in output:
+                    print(key)
                     output.append(key)
     print(output)
     return output
