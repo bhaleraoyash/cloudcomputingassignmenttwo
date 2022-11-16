@@ -53,9 +53,12 @@ ul {
     font-family: Constantia;
   }
   .container {
-    max-width: 700px;
+    max-width: 100%;/*700px;*/
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0,8,51,0.9)), url(download.jpg);
     margin: 0 auto;
-    padding-left: 0px;
+    padding-left: 40px;
     text-align: center;
     opacity: 0.9;
   }
@@ -199,4 +202,19 @@ ul {
       transform: rotate(360deg);
     }
   }
+
+.voice{
+  height:20px;
+  position:relative;
+  top:5px;
+  left:10px;
+}
+
+.searchbar{
+  height:45px;
+  border:none;
+  width:500px;
+  font-size:16px;
+  outline: none;
   
+}
