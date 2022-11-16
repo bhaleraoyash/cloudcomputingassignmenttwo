@@ -45,7 +45,7 @@ function searchPhoto() {
         for (n = 0; n < image_paths.length; n++) {
           images_list = image_paths[n].split('/');
           imageName = images_list[images_list.length - 1];
-          photosDiv.innerHTML += '<figure><img src="' + image_paths[n] + '" style="width:25%"><figcaption>' + imageName + '</figcaption></figure>';
+          photosDiv.innerHTML += '<figure><img src="https://cloudassignmenttwo.s3.amazonaws.com/' + image_paths[n] + '" style="width:25%"><figcaption>' + imageName + '</figcaption></figure>';
         }
         console.log(photosDiv);
       }
