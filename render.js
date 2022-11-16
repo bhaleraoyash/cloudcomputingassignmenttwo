@@ -56,7 +56,7 @@ function voiceSearch(){
 
     micButton = document.getElementById("mic_search");  
     
-    if (micButton.innerHTML == "mic") {
+    if (micButton.innerHTML == " mic ") {
         recognition.start();
     } else if (micButton.innerHTML == "mic_off"){
         recognition.stop();
@@ -69,7 +69,7 @@ function voiceSearch(){
 
     recognition.addEventListener("end", function() {
         console.log("Stopping recording.");
-        micButton.innerHTML = "mic";
+        micButton.innerHTML = " mic ";
     });
 
     recognition.addEventListener("result", resultOfSpeechRecognition);
