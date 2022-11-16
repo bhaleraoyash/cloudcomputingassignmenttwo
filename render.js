@@ -1,4 +1,5 @@
 function searchPhoto() {
+  console.log('Search called');
   var apigClient = apigClientFactory.newClient();
   var user_message = document.getElementById('note-textarea').value;
   var body = {};
@@ -77,9 +78,10 @@ function voiceSearch(){
         const current = event.resultIndex;
         transcript = event.results[current][0].transcript;
         inputSearchQuery.value = transcript;
-        console.log("Speech : ", transcript)
-        searchPhoto();
+        console.log("Speech : ", transcript);
     }
+
+    searchPhoto();
 }
 
 function getBase64(file) {
