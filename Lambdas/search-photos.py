@@ -39,6 +39,8 @@ def lambda_handler(event, context):
     userId="test",
     inputText= event['queryStringParameters']['q'])
     
+    print('inputText : ', event['queryStringParameters']['q'])
+
     print("response_lex",response_lex)
     if 'slots' in response_lex:
         keys = [response_lex['slots']['slotOne'],response_lex['slots']['slotTwo']]
