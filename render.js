@@ -26,10 +26,10 @@ function searchPhoto() {
       photosDiv.innerHTML = "";
 
       if (length_of_response == 0) {
-        photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;">No Images Found !!!</h2>';
+        photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;">Sorry, we did not find any images for those labels</h2>';
       }
       else {
-        photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;margin-bottom:30px; color: white;">Here are your images: </h2>';
+        photosDiv.innerHTML = '<h2 style="text-align: center;font-size: 25px;font-style: bold;margin-top:30px;margin-bottom:30px; color: white;">Here is what we found : </h2>';
         image_paths = res["data"];
         for (n = 0; n < image_paths.length; n++) {
           images_list = image_paths[n].split('/');
