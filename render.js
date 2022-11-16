@@ -100,7 +100,6 @@ function uploadPhoto() {
   var filePath = (document.getElementById('file_path').value).split("\\");
   var file = document.getElementById('file_path').files[0];
   const reader = new FileReader();
-  console.log(filePath);
   if ((filePath == "") || (!['png', 'jpg', 'jpeg'].includes(filePath.toString().split(".")[1]))) {
         alert("Please upload a valid .png/.jpg/.jpeg file!");
   }
@@ -111,7 +110,14 @@ function uploadPhoto() {
 
     url = 'https://8plos60pul.execute-api.us-east-1.amazonaws.com/v1/upload/cloudassignmenttwo/' + file.name
     axios.put(url,file,config).then(response=>{
-      alert("Upload successful!!");
+      alert("File uploaded to S3 Bucket successfully!");
+      myFunction()
     })
   }
+}
+
+function myFunction(){
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
