@@ -69,6 +69,7 @@ def dispatch(intent_request):
     raise Exception('Intent with name ' + intent_name + ' not supported')
 
 def search_intent(labels):
+    print('AWS COde pipeline testing')
     p = inflect.engine()
     url = 'https://search-photos-uyhb4sgvhvdnc7kklvhnoppgsm.us-east-1.es.amazonaws.com/photos/_search?q='
     resp = []
