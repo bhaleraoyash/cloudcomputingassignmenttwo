@@ -110,7 +110,6 @@ function uploadPhoto() {
 
     url = 'https://8plos60pul.execute-api.us-east-1.amazonaws.com/v1/upload/cloudassignmenttwo/' + file.name
     axios.put(url,file,config).then(response=>{
-      alert("File uploaded to S3 Bucket successfully!");
       myFunction()
     })
   }
