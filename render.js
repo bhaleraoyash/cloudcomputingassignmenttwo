@@ -11,6 +11,7 @@ function searchPhoto() {
   var additionalParams = {
     headers: {
       'Content-Type': 'application/json',
+      'x-api-key': 'tDtCVaST6V5yUMPWGDpnt4QiWYvZtcoH7owK9XBZ'
     },
   };
 
@@ -105,7 +106,7 @@ function uploadPhoto() {
   }
   else {
     let config = {
-      headers:{'Content-Type': file.type,'x-amz-meta-customLabels': custom_labels.value}
+      headers:{'Content-Type': file.type,'x-amz-meta-customLabels': custom_labels.value, 'x-api-key': 'tDtCVaST6V5yUMPWGDpnt4QiWYvZtcoH7owK9XBZ'}
     };
 
     url = 'https://8plos60pul.execute-api.us-east-1.amazonaws.com/v1/upload/cloudassignmenttwo/' + file.name
