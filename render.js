@@ -77,7 +77,8 @@ function voiceSearch(){
         const current = event.resultIndex;
         transcript = event.results[current][0].transcript;
         inputSearchQuery.value = transcript;
-        console.log("transcript : ", transcript)
+        console.log("Speech : ", transcript)
+        searchPhoto();
     }
 }
 
