@@ -42,7 +42,9 @@ def lambda_handler(event, context):
     print("response_lex",response_lex)
     if 'slots' in response_lex:
         keys = [response_lex['slots']['slotOne'],response_lex['slots']['slotTwo']]
+        print('keys : ', keys)
         pictures = search_intent(keys) #get images keys from elastic search labels
+        print('pictures : ', pictures)
         response = {
             "statusCode": 200,
             "headers": {"Access-Control-Allow-Origin":"*","Content-Type":"application/json"},
